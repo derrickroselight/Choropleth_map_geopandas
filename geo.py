@@ -7,11 +7,6 @@ import numpy as np
 
 """ Read """
 
-Codeine = pd.read_excel('/Users/Light/PythonData/opioid_trend.xlsx', sheet_name=0)
-Morphine = pd.read_excel('/Users/Light/PythonData/opioid_trend.xlsx', sheet_name=1)
-Fentanyl = pd.read_excel('/Users/Light/PythonData/opioid_trend.xlsx', sheet_name=2)
-Pethidine = pd.read_excel('/Users/Light/PythonData/opioid_trend.xlsx', sheet_name=3)
-
 overall_4_Px = pd.read_excel('/Users/Light/PythonData/overall_opioid_trend.xlsx', sheet_name=0)
 overall_4_MME = pd.read_excel('/Users/Light/PythonData/overall_opioid_trend.xlsx', sheet_name=1)
 overall_7_Px = pd.read_excel('/Users/Light/PythonData/overall_opioid_trend.xlsx', sheet_name=2)
