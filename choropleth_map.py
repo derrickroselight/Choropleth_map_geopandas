@@ -5,55 +5,12 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-""" Read """
+""" Read files """
 
 overall_4_Px = pd.read_excel('/Users/Light/PythonData/overall_opioid_trend.xlsx', sheet_name=0)
-overall_4_MME = pd.read_excel('/Users/Light/PythonData/overall_opioid_trend.xlsx', sheet_name=1)
-overall_7_Px = pd.read_excel('/Users/Light/PythonData/overall_opioid_trend.xlsx', sheet_name=2)
-overall_7_MME = pd.read_excel('/Users/Light/PythonData/overall_opioid_trend.xlsx', sheet_name=3)
-overall_4_pop = pd.read_excel('/Users/Light/PythonData/overall_opioid_trend.xlsx', sheet_name=4)
-overall_7_pop = pd.read_excel('/Users/Light/PythonData/overall_opioid_trend.xlsx', sheet_name=5)
-
-
-
-pethidine = pd.read_excel('/Users/Light/Downloads/geo/pethidine.xlsx')
-pethidine.head()
-
-morphine = pd.read_excel('/Users/shawnslab/Desktop/geo/morphine.xlsx')
-morphine.head()
-
-fentanyl = pd.read_excel('/Users/shawnslab/Desktop/geo/fentanyl.xlsx')
-fentanyl.head()
-
-codeine = pd.read_excel('/Users/shawnslab/Desktop/geo/codeine.xlsx')
-codeine.head()
-
-ERLA = pd.read_excel('/Users/shawnslab/Desktop/geo/ERLA.xlsx')
-ERLA.head()
-
-MME = pd.read_excel('/Users/shawnslab/Desktop/geo/MME.xlsx')
-MME.head()
-
-level = pd.read_excel('/Users/shawnslab/Desktop/geo/level.xlsx')
-level.head()
-
-drugday = pd.read_excel('/Users/shawnslab/Desktop/geo/drugday.xlsx')
-drugday.head()
-
-short = pd.read_excel('/Users/shawnslab/Desktop/geo/short.xlsx')
-short.head()
-
-long = pd.read_excel('/Users/shawnslab/Desktop/geo/long.xlsx')
-long.head()
-
 city_shp = gpd.read_file('/Users/Light/PythonData/GeoCityData/COUNTY_MOI_1080617.shp')
 city_shp.plot()
 
-Town_shp = gpd.read_file('/Users/Light/PythonData/GeoTownData/TOWN_MOI_1071226.shp')
-Town_shp.plot()
-
-town_mediclass = pd.read_excel('/Users/Light/PythonData/town_mediclass.xlsx')
-long.head()
 
 """ Merge """
 
@@ -63,29 +20,6 @@ Fentanyl_geo = pd.merge(left = city_shp, right = Fentanyl, on='COUNTYID')
 Pethidine_geo = pd.merge(left = city_shp, right = Pethidine, on='COUNTYID')
 
 overall_4_Px_geo = pd.merge(left = city_shp, right = overall_4_Px, on='COUNTYID')
-overall_4_MME_geo = pd.merge(left = city_shp, right = overall_4_MME, on='COUNTYID')
-overall_7_Px_geo = pd.merge(left = city_shp, right = overall_7_Px, on='COUNTYID')
-overall_7_MME_geo = pd.merge(left = city_shp, right = overall_7_MME, on='COUNTYID')
-overall_4_pop_geo = pd.merge(left = city_shp, right = overall_7_pop, on='COUNTYID')
-overall_7_pop_geo = pd.merge(left = city_shp, right = overall_7_pop, on='COUNTYID')
-
-
-
-mediclass = pd.merge(left = Town_shp, right = town_mediclass, on='TOWNID')
-
-short = pd.merge(left = city_shp, right = short, on='COUNTYID')
-long = pd.merge(left = city_shp, right = long, on='COUNTYID')
-drugday = pd.merge(left = city_shp, right = drugday, on='COUNTYID')
-ERLA = pd.merge(left = city_shp, right = ERLA, on='COUNTYID')
-MME = pd.merge(left = city_shp, right = MME, on='COUNTYID')
-level = pd.merge(left = city_shp, right = level, on='COUNTYID')
-
-
-
-
-
-np.percentile(overall_4_pop[2012], [20, 40, 60, 80, 100])
-np.percentile(overall_7_pop[2012], [20, 40, 60, 80, 100])
 
 
 
